@@ -24,3 +24,47 @@ a {
     background: black;
   }
 }
+
+@font-face {
+  font-family: "FT88 Gothique";
+  src: url("../fonts/FT88-Gothique.woff2") format("woff2"),
+    url("../fonts/FT88-Gothique.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FA_KJNZEIIUUL";
+  src: url("../fonts/FA_KJNZEIIUUL.woff2") format("woff2"),
+    url("../fonts/FA_KJNZEIIUUL.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@media (hover: hover) {
+  a:hover {
+    color: blue;
+  }
+}
+
+@media (max-width: 800px) {
+  .artist-wrapper {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  .artist-image {
+    width: 80px !important;
+    height: 80px !important;
+  }
+  .text-wrapper {
+    font-size: 40px !important;
+  }
+  .artist-name {
+    font-size: 18px !important;
+  }
+  button {
+    font-size: 14px !important;
+  }
+}
