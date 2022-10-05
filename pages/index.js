@@ -109,7 +109,7 @@ export default function Home() {
           >
             <h1 style={{ display: "inline" }}>
               this is what i’ve been listening to on spotify for the past 6
-              months{` `}
+              months {` `}
             </h1>
             <span
               style={{
