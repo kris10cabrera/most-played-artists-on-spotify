@@ -47,6 +47,10 @@ a {
   a:hover {
     color: blue;
   }
+
+  .glitter-heart:hover {
+    filter: drop-shadow(#000 0px 0px 15px) !important;
+  }
 }
 
 @media (max-width: 800px) {
