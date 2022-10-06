@@ -66,24 +66,38 @@ export default function Home() {
                 </a>
 
                 <div
-                  className="artist-image"
+                  className="glitter-heart"
                   style={{
-                    backgroundImage: `url(${artist.image})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
                     width: 260,
                     height: 260,
-                    maskImage: `url(/heart.png)`,
-                    maskRepeat: "no-repeat",
-                    maskPosition: "center",
-                    maskSize: "contain",
-                    WebkitMaskImage: `url(/heart.png)`,
-                    WebkitMaskRepeat: "no-repeat",
-                    WebkitMaskPosition: "center",
-                    WebkitMaskSize: "contain",
+                    backgroundSize: "100%",
+                    backgroundImage: "url(/grain-heart.png)",
+                    backgroundRepeat: "no-repeat",
+                    transition: "filter 300ms, color 300ms",
+                    filter: "drop-shadow(gray 0px 0px 4px)",
                   }}
-                />
+                >
+                  <div
+                    className="artist-image"
+                    style={{
+                      backgroundImage: `url(${artist.image})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
+                      width: 240,
+                      height: 220,
+                      maskImage: `url(/heart.png)`,
+                      maskRepeat: "no-repeat",
+                      maskPosition: "center",
+                      maskSize: "contain",
+                      WebkitMaskImage: `url(/heart.png)`,
+                      WebkitMaskRepeat: "no-repeat",
+                      WebkitMaskPosition: "center",
+                      WebkitMaskSize: "contain",
+                      margin: "auto",
+                    }}
+                  />
+                </div>
               </div>
             );
           })}
