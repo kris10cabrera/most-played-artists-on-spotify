@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "../style.css";
 import "minireset.css/minireset.css";
 
 function MyApp({ Component, pageProps }) {

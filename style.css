@@ -27,8 +27,8 @@ a {
 
 @font-face {
   font-family: "FT88 Gothique";
-  src: url("../fonts/FT88-Gothique.woff2") format("woff2"),
-    url("../fonts/FT88-Gothique.woff") format("woff");
+  src: url("./fonts/FT88-Gothique.woff2") format("woff2"),
+    url("./fonts/FT88-Gothique.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -36,8 +36,8 @@ a {
 
 @font-face {
   font-family: "FA_KJNZEIIUUL";
-  src: url("../fonts/FA_KJNZEIIUUL.woff2") format("woff2"),
-    url("../fonts/FA_KJNZEIIUUL.woff") format("woff");
+  src: url("./fonts/FA_KJNZEIIUUL.woff2") format("woff2"),
+    url("./fonts/FA_KJNZEIIUUL.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
