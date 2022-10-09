@@ -1,10 +1,11 @@
+import Box from "./base/Box";
+
 export default function Heart(props) {
   const { artist } = props;
   return (
-    <div
+    <Box
       key={artist.artist}
-      className="artist-wrapper"
-      style={{
+      css={{
         width: 300,
         display: "flex",
         flexDirection: "column",
@@ -15,10 +16,10 @@ export default function Heart(props) {
         transition: "transform 100ms",
       }}
     >
-      <a
+      <Box
+        as="a"
         href={artist.url}
-        className="artist-name"
-        style={{
+        css={{
           fontSize: 21,
           lineHeight: 1.2,
           fontFamily: "FT88 Gothique",
@@ -32,30 +33,48 @@ export default function Heart(props) {
           paddingTop: 2,
           paddingLeft: 4,
           paddingRight: 4,
-          borderTopLeftRadius: "4px",
-          borderTopRightRadius: "4px",
+          borderRadius: "4px",
         }}
       >
         {artist.artist}
-      </a>
-      <div
-        className="glitter-heart"
-        style={{
+      </Box>
+      <Box
+        css={{
           width: 260,
           height: 240,
-          backgroundSize: "100%",
-          backgroundRepeat: "no-repeat",
-          transition: "filter 300ms, color 300ms",
+          position: "relative",
           filter: "drop-shadow(red 0px 0px 10px)",
-          boxShadow:
-            "inset 0px 33px 25px 0 #000, inset 0 66px 15px 0px #ccc, inset 0 99px 5px 0px #fff",
+          background: "#fff",
           borderRadius: "71px",
-          transition: "box-shadow 500ms",
+
+          "&::after": {
+            content: "",
+            position: "absolute",
+            width: 260,
+            height: 240,
+            left: 0,
+            right: 0,
+            borderRadius: "71px",
+            bottom: 0,
+            transition: "opacity 300ms",
+            opacity: 1,
+            zIndex: "-2",
+            boxShadow:
+              "inset 0px 33px 25px 0 #000, inset 0 66px 15px 0px #ccc, inset 0 99px 5px 0px #fff",
+            filter: "drop-shadow(red 0px 0px 10px)",
+          },
+          "@hover": {
+            "&:hover": {
+              "&::after": {
+                opacity: 0,
+              },
+            },
+          },
         }}
       >
-        <div
+        <Box
           className="artist-image"
-          style={{
+          css={{
             background: "blue",
             backgroundImage: `url(${artist.image})`,
             backgroundSize: "cover",
@@ -63,20 +82,15 @@ export default function Heart(props) {
             backgroundRepeat: "no-repeat",
             width: 240,
             height: 236,
-            maskImage: `url(https://favorite-artists.vercel.app/heart.png)`,
-            maskRepeat: "no-repeat",
-            maskPosition: "center",
-            maskSize: "contain",
-            WebkitMaskImage: `url(https://favorite-artists.vercel.app/heart.png)`,
-            WebkitMaskRepeat: "no-repeat",
-            WebkitMaskPosition: "center",
-            WebkitMaskSize: "contain",
 
-            // note to self: maybe it's too many styles being recalculacated on render
             margin: "auto",
+            "@bp0-max": {
+              width: 80,
+              height: 80,
+            },
           }}
-        ></div>
-      </div>
-    </div>
+        ></Box>
+      </Box>
+    </Box>
   );
 }

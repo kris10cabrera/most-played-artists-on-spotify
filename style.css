@@ -15,16 +15,6 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-}
-
 @font-face {
   font-family: "FT88 Gothique";
   src: url("./fonts/FT88-Gothique.woff2") format("woff2"),
@@ -43,31 +33,20 @@ a {
   font-display: swap;
 }
 
-@media (hover: hover) {
-  .artist-wrapper:hover {
-    color: blue;
-  }
-  .glitter-heart:hover {
-    box-shadow: unset !important;
-  }
-}
-
-@media (max-width: 800px) {
-  .artist-wrapper {
-    width: 150px !important;
-    height: 150px !important;
-  }
+@supports (-webkit-mask-image: url(#mask)) or (mask-image: url(#mask)) {
   .artist-image {
-    width: 80px !important;
-    height: 80px !important;
-  }
-  .text-wrapper {
-    font-size: 40px !important;
-  }
-  .artist-name {
-    font-size: 18px !important;
-  }
-  button {
-    font-size: 14px !important;
+    mask-image: url("/heart.png");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+
+    /* maskImage: `url(https://favorite-artists.vercel.app/heart.png)`,
+    maskRepeat: "no-repeat",
+    maskPosition: "center",
+    maskSize: "contain",
+    WebkitMaskImage: `url(https://favorite-artists.vercel.app/heart.png)`,
+    WebkitMaskRepeat: "no-repeat",
+    WebkitMaskPosition: "center",
+    WebkitMaskSize: "contain", */
   }
 }

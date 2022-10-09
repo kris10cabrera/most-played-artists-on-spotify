@@ -1,9 +1,11 @@
 import Head from "next/head";
 import { useState } from "react";
 import useSWR from "swr";
-import Button from "../Button";
+import Box from "../components/base/Box";
+
+import Button from "../components/Button";
 import Heart from "../components/Heart";
-import Scrollbar from "../components/Scrollbar";
+import Scrollbar from "../components/Doodles";
 import fetcher from "../lib/fetcher";
 
 export default function Home() {
@@ -26,59 +28,59 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main
-        style={{
+      <Box
+        as="main"
+        css={{
           backgroundColor: "#efefef",
           padding: 20,
           color: "#000",
         }}
       >
         <Scrollbar />
-        <div
-          className="text-wrapper"
-          style={{
-            fontFamily: "Times",
-            // position: "fixed",
-            // left: "50%",
-            // top: "50%",
-            // transform: "translate(-50%, -50%)",
-            fontSize: 100,
-            width: "90%",
-            color: "red",
-            letterSpacing: -3,
-            maxWidth: 900,
-            border: "1px solid red",
-            background: "#ffffffcc",
-            padding: 20,
-            borderRadius: 11,
-            backdropFilter: "blur(3px)",
-            margin: "auto",
-            marginBottom: 40,
-          }}
-        >
-          <h1 style={{ display: "inline" }}>
+        <Box as="section" css={{ maxWidth: 1400, margin: "auto" }}>
+          <h1
+            style={{
+              fontFamily: "Times",
+              letterSpacing: -3,
+              zIndex: 5,
+              position: "sticky",
+              left: 5,
+              top: 15,
+              right: 5,
+              fontSize: 73,
+              color: "#7fc0ff",
+              mixBlendMode: "color-dodge",
+              border: "1px solid red",
+              background: "#ffffffcc",
+              padding: 20,
+              borderRadius: 11,
+              backdropFilter: "blur(3px)",
+              margin: "auto",
+              marginBottom: 40,
+            }}
+          >
             this is what i’ve been listening to on spotify for the past 6 months{" "}
             {` `}
           </h1>
 
           <Button fetchUser={fetchUser} />
           <button>X</button>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: 4,
-            alignItems: "center",
-            justifyContent: "space-evenly",
-          }}
-        >
-          {artists.map((artist) => {
-            return <Heart artist={artist} key={artist.image} />;
-          })}
-        </div>
-      </main>
+
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 4,
+              alignItems: "center",
+              justifyContent: "space-evenly",
+            }}
+          >
+            {artists.map((artist) => {
+              return <Heart artist={artist} key={artist.image} />;
+            })}
+          </div>
+        </Box>
+      </Box>
     </div>
   );
 }

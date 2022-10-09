@@ -1,8 +1,9 @@
 import { useEffect } from "react";
+import Box from "./base/Box";
 
 export default function Button({ fetchUser }) {
   const client_id = `ad145c69010649da928b415e62ba0343`;
-  const redirect_uri = `https://favorite-artists.vercel.app/`;
+  const redirect_uri = `http://localhost:3000/`;
   const scope = `user-top-read`;
   const AUTHORIZATION_URL = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}&scope=${scope}&show_dialog=true`;
   console.log("auth url ", AUTHORIZATION_URL);
@@ -49,15 +50,21 @@ export default function Button({ fetchUser }) {
   }, []);
 
   return (
-    <button
+    <Box
+      as="button"
       onClick={login}
-      style={{
+      css={{
         display: "block",
         letterSpacing: 2,
         fontSize: 16,
+        backgroundColor: "#efefef",
+        color: "#000",
+        "@bp0-max": {
+          fontSize: 14,
+        },
       }}
     >
       login with spotify to view yours
-    </button>
+    </Box>
   );
 }
