@@ -44,6 +44,10 @@ class MyDocument extends Document {
             href="/favicon-16x16.png"
           />
           <meta name="theme-color" content="#ffffff" />
+          <meta
+            property="og:url"
+            content="https://www.do-you-have-a-crush-on.me/"
+          />
         </Head>
         <body>
           <Main />
