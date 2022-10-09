@@ -44,12 +44,9 @@ a {
 }
 
 @media (hover: hover) {
-  a:hover {
+  .artist-wrapper:hover {
+    transform: scale(1.05);
     color: blue;
-  }
-
-  .glitter-heart:hover {
-    filter: drop-shadow(#000 0px 0px 15px) !important;
   }
 }
 
