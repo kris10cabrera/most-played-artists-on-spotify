@@ -2,10 +2,8 @@ import { useEffect } from "react";
 import Box from "./base/Box";
 
 export default function Button({ fetchUser }) {
-  const { NEXT_PUBLIC_SPOTIFY_CLIENT_ID, NEXT_PUBLIC_REDIRECT_URI } =
-    process.env;
   const scope = `user-top-read`;
-  const AUTHORIZATION_URL = `https://accounts.spotify.com/authorize?client_id=${NEXT_PUBLIC_SPOTIFY_CLIENT_ID}&response_type=token&redirect_uri=${NEXT_PUBLIC_REDIRECT_URI}&scope=${scope}&show_dialog=true`;
+  const AUTHORIZATION_URL = `https://accounts.spotify.com/authorize?client_id=${process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID}&response_type=token&redirect_uri=${process.env.NEXT_PUBLIC_REDIRECT_URI}&scope=${scope}&show_dialog=true`;
 
   const login = () => {
     let popup = window.open(
@@ -56,12 +54,9 @@ export default function Button({ fetchUser }) {
       css={{
         display: "block",
         letterSpacing: 2,
-        fontSize: 16,
+        fontSize: 18,
         backgroundColor: "#efefef",
         color: "#000",
-        "@bp0-max": {
-          fontSize: 14,
-        },
       }}
     >
       login with spotify to view yours
