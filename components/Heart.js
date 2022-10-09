@@ -47,8 +47,10 @@ export default function Heart(props) {
           backgroundRepeat: "no-repeat",
           transition: "filter 300ms, color 300ms",
           filter: "drop-shadow(red 0px 0px 10px)",
-          boxShadow: "#717171b5 0px 0px 20px 20px",
+          boxShadow:
+            "inset 0px 33px 25px 0 #000, inset 0 66px 15px 0px #ccc, inset 0 99px 5px 0px #fff",
           borderRadius: "71px",
+          transition: "box-shadow 500ms",
         }}
       >
         <div
