@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import { getCssText } from "../stitches.config";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -8,8 +9,12 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
+          <style
+            id="stitches"
+            dangerouslySetInnerHTML={{ __html: getCssText() }}
+          />
           <meta
             name="description"
             content="most played artists on Spotify from the last 6 months. created by kris10cabrera"
