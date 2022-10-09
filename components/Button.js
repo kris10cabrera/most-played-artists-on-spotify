@@ -52,11 +52,17 @@ export default function Button({ fetchUser }) {
       as="button"
       onClick={login}
       css={{
+        zIndex: 1,
+        position: "relative",
         display: "block",
         letterSpacing: 2,
-        fontSize: 18,
+        fontSize: 26,
         backgroundColor: "#efefef",
-        color: "#000",
+        color: "blue",
+        marginBottom: 40,
+        "@bp0-max": {
+          fontSize: 17,
+        },
       }}
     >
       login with spotify to view yours
