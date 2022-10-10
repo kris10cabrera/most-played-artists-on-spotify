@@ -8,7 +8,7 @@ export default function Footer() {
         fontFamily: "FT88",
         letterSpacing: 1,
         zIndex: 5,
-        fontSize: 16,
+        fontSize: 20,
         fontStyle: "italic",
         letterSpacing: -1,
         position: "fixed",
