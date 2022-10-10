@@ -8,6 +8,7 @@ import Heart from "../components/Heart";
 import Scrollbar from "../components/Doodles";
 import fetcher from "../lib/fetcher";
 import Heading from "../components/Heading";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const [user, fetchUser] = useState(null);
@@ -54,7 +55,7 @@ export default function Home() {
             })}
           </div>
         </Box>
-        encuentra fuerza en el sonido
+        <Footer />
       </Box>
     </div>
   );

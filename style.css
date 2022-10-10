@@ -30,5 +30,14 @@ a {
     url("./fonts/FA_KJNZEIIUUL.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "FT88";
+  src: url("./fonts/FT88-Italic.woff2") format("woff2"),
+    url("./fonts/FT88-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
   font-display: swap;
 }
