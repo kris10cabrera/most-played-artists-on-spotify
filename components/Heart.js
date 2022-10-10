@@ -1,9 +1,11 @@
 import Box from "./base/Box";
+
 import Image from "./base/Image";
 
 export default function Heart(props) {
   const { artist, index } = props;
   const divisible = index % 3 === 0;
+
   return (
     <Box
       as="a"
@@ -25,7 +27,7 @@ export default function Heart(props) {
           right: 0,
           borderRadius: "71px",
           transition: "opacity 300ms",
-          opacity: divisible ? 1 : 0,
+          opacity: 1,
           zIndex: -2,
           boxShadow:
             "inset 0px 33px 25px 0 #000, inset 0 66px 15px 0px #ccc, inset 0 99px 5px 0px #fff",
@@ -34,7 +36,7 @@ export default function Heart(props) {
         "@hover": {
           "&:hover": {
             "&::after": {
-              opacity: divisible ? 0 : 1,
+              opacity: 0,
             },
           },
         },
