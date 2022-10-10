@@ -60,6 +60,7 @@ export default function Button({ fetchUser }) {
         backgroundColor: "#efefef",
         color: "blue",
         marginBottom: 40,
+        border: "2px outset buttonborder",
         "@bp0-max": {
           fontSize: 17,
         },

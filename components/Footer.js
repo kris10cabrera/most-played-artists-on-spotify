@@ -16,6 +16,8 @@ export default function Footer() {
         background: "rgb(255 255 255 / 85%)",
         padding: 5,
         bottom: 20,
+        left: "50%",
+        transform: "translateX(-50%)",
         position: "fixed",
         border: "1px solid #000",
         width: "max-content",
