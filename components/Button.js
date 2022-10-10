@@ -53,7 +53,7 @@ export default function Button({ fetchUser }) {
       onClick={login}
       css={{
         zIndex: 1,
-        fontFamily: "FT88-Gothique",
+        fontFamily: "FT88 Gothique",
         position: "relative",
         display: "block",
         textShadow: "0px 0px 17px #0031ff",
