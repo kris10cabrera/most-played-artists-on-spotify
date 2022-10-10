@@ -71,10 +71,6 @@ class MyDocument extends Document {
             property="twitter:image"
             content="https://www.do-you-have-a-crush-on.me/open-graph.jpg"
           />
-          <meta
-            property="og:image"
-            content="https://www.do-you-have-a-crush-on.me/open-graph.jpg"
-          />
         </Head>
         <body>
           <Main />
