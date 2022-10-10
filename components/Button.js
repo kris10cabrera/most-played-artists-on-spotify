@@ -53,14 +53,18 @@ export default function Button({ fetchUser }) {
       onClick={login}
       css={{
         zIndex: 1,
+        fontFamily: "Arial, Helvetica, sans-serif",
         position: "relative",
         display: "block",
         letterSpacing: 2,
         fontSize: 26,
-        backgroundColor: "#efefef",
+        backgroundColor: "#cdcdcd",
         color: "blue",
         marginBottom: 40,
-        border: "2px outset buttonborder",
+        border: "2px outset",
+        borderTopColor: "#c4c4c4",
+        borderBottomColor: "#ccc",
+        borderLeftColor: "#fff",
         "@bp0-max": {
           fontSize: 17,
         },

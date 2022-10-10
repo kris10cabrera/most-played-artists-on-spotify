@@ -10,7 +10,7 @@ export default function Heading() {
         letterSpacing: -3,
         zIndex: 5,
         top: 15,
-        fontSize: 30,
+        fontSize: 43,
         letterSpacing: -1,
         position: "sticky",
         color: "#fff",
