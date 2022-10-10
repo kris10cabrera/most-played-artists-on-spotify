@@ -53,9 +53,10 @@ export default function Button({ fetchUser }) {
       onClick={login}
       css={{
         zIndex: 1,
-        fontFamily: "Arial, Helvetica, sans-serif",
+        fontFamily: "FT88-Gothique",
         position: "relative",
         display: "block",
+        textShadow: "0px 0px 17px #0031ff",
         letterSpacing: 2,
         fontSize: 26,
         backgroundColor: "#cdcdcd",
@@ -66,11 +67,11 @@ export default function Button({ fetchUser }) {
         borderBottomColor: "#ccc",
         borderLeftColor: "#fff",
         "@bp0-max": {
-          fontSize: 17,
+          fontSize: 20,
         },
       }}
     >
-      login with spotify to view yours
+      login with spotify to view yours!
     </Box>
   );
 }
