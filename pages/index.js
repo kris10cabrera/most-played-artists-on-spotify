@@ -45,7 +45,7 @@ export default function Home() {
             style={{
               display: "flex",
               flexWrap: "wrap",
-              gap: 10,
+              gap: 20,
               alignItems: "center",
               justifyContent: "space-evenly",
             }}
