@@ -52,6 +52,7 @@ export default function Button({ fetchUser }) {
       as="button"
       onClick={login}
       css={{
+        padding: 10,
         zIndex: 1,
         fontFamily: "FT88 Gothique",
         position: "relative",
@@ -68,6 +69,7 @@ export default function Button({ fetchUser }) {
         borderLeftColor: "#fff",
         "@bp0-max": {
           fontSize: 20,
+          padding: 5,
         },
       }}
     >

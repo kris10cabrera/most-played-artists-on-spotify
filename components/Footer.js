@@ -8,7 +8,7 @@ export default function Footer() {
         fontFamily: "FT88",
         letterSpacing: 1,
         zIndex: 5,
-        fontSize: 20,
+        fontSize: 18,
         fontStyle: "italic",
         letterSpacing: -1,
         position: "fixed",
@@ -31,7 +31,7 @@ export default function Footer() {
       }}
     >
       encuentra fuerza en el sonido{" "}
-      <Box as="span" css={{ fontSize: 15 }}>
+      <Box as="span" css={{ fontSize: 15, "@bp0-max": { fontSize: 13 } }}>
         *:･ﾟ✧*:･ﾟ
       </Box>{" "}
       made by{" "}
