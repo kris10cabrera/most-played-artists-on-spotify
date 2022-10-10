@@ -48,6 +48,14 @@ class MyDocument extends Document {
             property="og:url"
             content="https://www.do-you-have-a-crush-on.me/"
           />
+          <meta
+            property="twitter:image"
+            content="https://www.do-you-have-a-crush-on.me/open-graph.jpg"
+          />
+          <meta
+            property="og:image"
+            content="https://www.do-you-have-a-crush-on.me/open-graph.jpg"
+          />
         </Head>
         <body>
           <Main />
