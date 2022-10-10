@@ -5,6 +5,7 @@ export default function Heading() {
     <Box
       as="h1"
       css={{
+        display: "inline-block",
         fontFamily: "Times",
         letterSpacing: -3,
         zIndex: 5,
@@ -22,7 +23,7 @@ export default function Heading() {
         padding: 5,
         "@bp0": {
           padding: 20,
-          fontSize: 76,
+          fontSize: 60,
           position: "sticky",
           letterSpacing: -3,
         },
