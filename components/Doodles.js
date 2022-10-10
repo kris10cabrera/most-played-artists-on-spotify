@@ -5,14 +5,20 @@ export default function Scrollbar() {
     <Box
       aria-hidden
       css={{
+        transform: "rotate(315deg)",
+        color: "red",
         display: "flex",
         flexWrap: "wrap",
         pointerEvents: "none",
         fontFamily: "FA_KJNZEIIUUL",
         overflowWrap: "break-word",
         position: "fixed",
-        fontSize: 160,
-        maxWidth: "90%",
+        maxWidth: "60%",
+        fontSize: 80,
+        transformOrigin: "right",
+        "@bp0": {
+          fontSize: 160,
+        },
       }}
     >
       onmedonmedonmedonmedonmedonmedonmed
