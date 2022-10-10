@@ -25,7 +25,7 @@ export default function Home() {
         <title>spotify crushes</title>
         <meta
           name="description"
-          content="favorite artists on spotify from the last 6 months. created by kris10cabrera"
+          content="favorite artists on spotify from the last 6 months. made by kris10cabrera"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

@@ -15,15 +15,11 @@ class MyDocument extends Document {
             id="stitches"
             dangerouslySetInnerHTML={{ __html: getCssText() }}
           />
-          <meta
-            name="description"
-            content="most played artists on Spotify from the last 6 months. created by kris10cabrera"
-          />
           <link rel="icon" href="/favicon.ico" />
-          <meta name="title" content="most played artists" />
+          <meta name="title" content="spotify crushes" />
           <meta
             name="description"
-            content="most played artists on Spotify from the last 6 months. created by kris10cabrera"
+            content="favorite artists on spotify from the last 6 months. made by kris10cabrera"
           />
           <meta property="og:type" content="website" />
           <link
@@ -47,6 +43,29 @@ class MyDocument extends Document {
           <meta
             property="og:url"
             content="https://www.do-you-have-a-crush-on.me/"
+          />
+          <meta
+            property="og:url"
+            content="https://www.do-you-have-a-crush-on.me/"
+          />
+          <meta property="og:title" content="spotify crushes" />
+          <meta
+            property="og:description"
+            content="favorite artists on spotify from the last 6 months. made by kris10cabrera"
+          />
+          <meta
+            property="og:image"
+            content="https://www.do-you-have-a-crush-on.me/open-graph.jpg"
+          />
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta
+            property="twitter:url"
+            content="https://www.do-you-have-a-crush-on.me/"
+          />
+          <meta property="twitter:title" content="spotify crushes" />
+          <meta
+            property="twitter:description"
+            content="favorite artists on spotify from the last 6 months. made by kris10cabrera"
           />
           <meta
             property="twitter:image"
