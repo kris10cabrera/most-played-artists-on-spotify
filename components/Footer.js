@@ -38,7 +38,15 @@ export default function Footer() {
         href="https://www.kristencabrera.com/"
         target="_blank"
         rel="noreferrer"
-        css={{ textDecoration: "underline" }}
+        css={{
+          textDecoration: "underline",
+          "@hover": {
+            "&:hover": {
+              background: "#000",
+              color: "#fff",
+            },
+          },
+        }}
       >
         kris10cabrera
       </Box>
