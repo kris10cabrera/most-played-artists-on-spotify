@@ -6,7 +6,6 @@ export default function Footer() {
       as="footer"
       css={{
         fontFamily: "FT88",
-
         zIndex: 5,
         fontSize: 18,
         fontStyle: "italic",
