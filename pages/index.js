@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useState } from "react";
 import useSWR from "swr";
 import Box from "../components/base/Box";
+import Marquee from "react-fast-marquee";
 
 import Button from "../components/Button";
 import Heart from "../components/Heart";
@@ -17,7 +18,8 @@ export default function Home() {
   if (!data) {
     return null;
   }
-  const artists = user ? user : data.artists;
+
+  const { artists, genres } = user ? user : data;
 
   return (
     <div>
@@ -53,7 +55,31 @@ export default function Home() {
             {artists.map((artist, index) => {
               return <Heart artist={artist} key={artist.image} index={index} />;
             })}
-          </div>
+          </Box>
+          <SecondaryHeading />
+          <Marquee
+            style={{
+              background: "rgb(205, 205, 205)",
+              border: "1px outset #ccc",
+            }}
+            speed={30}
+            gradient={false}
+          >
+            {genres.map((genre, index) => (
+              <Box
+                as="span"
+                key={genre}
+                css={{
+                  fontFamily: "FT88",
+                  fontStyle: "italic",
+                  marginRight: 3,
+                }}
+              >
+                {genre}
+                {genres.length - 1 !== index && ","}
+              </Box>
+            ))}
+          </Marquee>
         </Box>
         <Footer />
       </Box>

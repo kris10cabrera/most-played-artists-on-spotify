@@ -29,13 +29,16 @@ export default function Button({ fetchUser }) {
         .then((data) => {
           const { items } = data;
 
+          const genres = Array.from(
+            new Set(items.map((item) => item.genres).flat())
+          );
           const artists = items.map((item) => ({
             artist: item.name,
             image: item.images[1].url,
             url: item.external_urls["spotify"],
           }));
 
-          fetchUser(artists);
+          fetchUser({ artists, genres });
         });
     };
   };
