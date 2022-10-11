@@ -1,7 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Box from "./base/Box";
 
 export default function Button({ fetchUser }) {
+  const [button, showButton] = useState(true);
   const scope = `user-top-read`;
   const AUTHORIZATION_URL = `https://accounts.spotify.com/authorize?client_id=${process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID}&response_type=token&redirect_uri=${process.env.NEXT_PUBLIC_REDIRECT_URI}&scope=${scope}&show_dialog=true`;
 
@@ -28,7 +29,7 @@ export default function Button({ fetchUser }) {
         })
         .then((data) => {
           const { items } = data;
-
+          showButton(false);
           const genres = Array.from(
             new Set(items.map((item) => item.genres).flat())
           );
@@ -60,7 +61,7 @@ export default function Button({ fetchUser }) {
         zIndex: 1,
         fontFamily: "FT88 Gothique",
         position: "relative",
-        display: "block",
+        display: button ? "block" : "none",
         textShadow: "0px 0px 17px #0031ff",
         letterSpacing: 2,
         fontSize: 26,
