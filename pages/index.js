@@ -10,6 +10,7 @@ import Scrollbar from "../components/Doodles";
 import fetcher from "../lib/fetcher";
 import Heading from "../components/Heading";
 import Footer from "../components/Footer";
+import SecondaryHeading from "../components/SecondaryHeading";
 
 export default function Home() {
   const [user, fetchUser] = useState(null);
@@ -37,14 +38,15 @@ export default function Home() {
           backgroundColor: "#efefef",
           padding: 20,
           color: "#000",
+          paddingBottom: 100,
         }}
       >
         <Scrollbar />
         <Box as="section" css={{ maxWidth: 1400, margin: "auto" }}>
           <Heading />
           <Button fetchUser={fetchUser} />
-          <div
-            style={{
+          <Box
+            css={{
               display: "flex",
               flexWrap: "wrap",
               gap: 20,

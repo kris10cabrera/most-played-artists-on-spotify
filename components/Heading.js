@@ -6,11 +6,12 @@ export default function Heading() {
       as="h1"
       css={{
         display: "inline-block",
-        fontFamily: "Times",
+        fontFamily: "FT88",
+        fontWeight: "bold",
         letterSpacing: -3,
         zIndex: 5,
         top: 15,
-        fontSize: 43,
+        fontSize: 27,
         letterSpacing: -1,
         position: "sticky",
         color: "#fff",
@@ -23,7 +24,7 @@ export default function Heading() {
         padding: 5,
         "@bp0": {
           padding: 20,
-          fontSize: 60,
+          fontSize: 40,
           position: "sticky",
           letterSpacing: -3,
         },

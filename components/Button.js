@@ -55,6 +55,7 @@ export default function Button({ fetchUser }) {
       as="button"
       onClick={login}
       css={{
+        cursor: "pointer",
         padding: 10,
         zIndex: 1,
         fontFamily: "FT88 Gothique",
@@ -67,12 +68,42 @@ export default function Button({ fetchUser }) {
         color: "blue",
         marginBottom: 40,
         border: "2px outset",
+        borderRightColor: "#c4c4c4",
         borderTopColor: "#c4c4c4",
         borderBottomColor: "#ccc",
         borderLeftColor: "#fff",
         "@bp0-max": {
           fontSize: 20,
           padding: 5,
+        },
+
+        "@hover": {
+          "&:hover": {
+            "&::after": {
+              opacity: 1,
+            },
+          },
+        },
+        "&::after": {
+          content: "your content will not be saved",
+          bottom: -26,
+          position: "absolute",
+          left: 0,
+          right: 0,
+          color: "#fff",
+          fontSize: 15,
+          textAlign: "left",
+          background: "blue",
+          display: "inline",
+          padding: 4,
+          width: "fit-content",
+          fontFamily: "FT88",
+          fontStyle: "italic",
+          borderBottomLeftRadius: 4,
+          borderBottomRightRadius: 4,
+          textShadow: "none",
+          opacity: 0,
+          transition: "opacity 300ms",
         },
       }}
     >

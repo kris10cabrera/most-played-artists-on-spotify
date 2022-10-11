@@ -47,6 +47,7 @@ export default function Heart(props) {
     >
       <Box
         css={{
+          textTransform: "lowercase",
           fontSize: 21,
           lineHeight: 1.2,
           fontFamily: "FT88 Gothique",
