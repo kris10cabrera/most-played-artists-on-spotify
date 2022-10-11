@@ -19,7 +19,7 @@ class MyDocument extends Document {
           <meta name="title" content="spotify crushes" />
           <meta
             name="description"
-            content="favorite artists on spotify from the last 6 months. made by kris10cabrera"
+            content="most listened to artists & genres on spotify from the last 6 months. made by kris10cabrera."
           />
           <meta property="og:type" content="website" />
           <link
@@ -51,7 +51,7 @@ class MyDocument extends Document {
           <meta property="og:title" content="spotify crushes" />
           <meta
             property="og:description"
-            content="favorite artists on spotify from the last 6 months. made by kris10cabrera"
+            content="most listened to artists & genres on spotify from the last 6 months. made by kris10cabrera."
           />
           <meta
             property="og:image"
@@ -65,7 +65,7 @@ class MyDocument extends Document {
           <meta property="twitter:title" content="spotify crushes" />
           <meta
             property="twitter:description"
-            content="favorite artists on spotify from the last 6 months. made by kris10cabrera"
+            content="most listened to artists & genres on spotify from the last 6 months. made by kris10cabrera."
           />
           <meta
             property="twitter:image"
