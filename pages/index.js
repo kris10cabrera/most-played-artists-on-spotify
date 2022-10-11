@@ -64,6 +64,9 @@ export default function Home() {
               background: "rgb(205, 205, 205)",
               border: "1px outset #ccc",
               padding: 7,
+              "@bp0-max": {
+                padding: 2,
+              },
             }}
             speed={30}
             gradient={false}
@@ -77,6 +80,7 @@ export default function Home() {
                   fontStyle: "italic",
                   marginRight: 3,
                   fontSize: 20,
+                  "@bp0-max": { fontSize: 14 },
                 }}
               >
                 {genre}
