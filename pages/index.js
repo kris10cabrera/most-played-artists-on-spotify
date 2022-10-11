@@ -63,6 +63,7 @@ export default function Home() {
             style={{
               background: "rgb(205, 205, 205)",
               border: "1px outset #ccc",
+              padding: 7,
             }}
             speed={30}
             gradient={false}
@@ -75,6 +76,7 @@ export default function Home() {
                   fontFamily: "FT88",
                   fontStyle: "italic",
                   marginRight: 3,
+                  fontSize: 20,
                 }}
               >
                 {genre}
@@ -82,6 +84,18 @@ export default function Home() {
               </Box>
             ))}
           </Marquee>
+          <Box
+            css={{
+              fontFamily: "FT88",
+              marginTop: 40,
+              textAlign: "right",
+              zIndex: 4,
+              position: "relative",
+              fontSize: 14,
+            }}
+          >
+            Fonts courtesy of Velvetyne Type Foundry & Full Auto Foundry
+          </Box>
         </Box>
         <Footer />
       </Box>

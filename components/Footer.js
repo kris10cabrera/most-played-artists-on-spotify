@@ -39,6 +39,7 @@ export default function Footer() {
         as="a"
         href="https://www.kristencabrera.com/"
         target="_blank"
+        rel="noreferrer"
         css={{ textDecoration: "underline" }}
       >
         kris10cabrera

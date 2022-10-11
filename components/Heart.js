@@ -9,6 +9,8 @@ export default function Heart(props) {
   return (
     <Box
       as="a"
+      target="_blank"
+      rel="noreferrer"
       href={artist.url}
       key={artist.artist}
       css={{
