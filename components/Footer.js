@@ -6,11 +6,10 @@ export default function Footer() {
       as="footer"
       css={{
         fontFamily: "FT88",
-        letterSpacing: 1,
+
         zIndex: 5,
         fontSize: 18,
         fontStyle: "italic",
-        letterSpacing: -1,
         position: "fixed",
         color: "#000",
         background: "rgb(255 255 255 / 85%)",

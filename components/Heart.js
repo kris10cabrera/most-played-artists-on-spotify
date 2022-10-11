@@ -42,9 +42,6 @@ export default function Heart(props) {
             },
           },
         },
-        "@bp0-max": {
-          width: 300,
-        },
       }}
     >
       <Box

@@ -8,11 +8,9 @@ export default function Heading() {
         display: "inline-block",
         fontFamily: "FT88",
         fontWeight: "bold",
-        letterSpacing: -3,
         zIndex: 5,
         top: 15,
         fontSize: 27,
-        letterSpacing: -1,
         position: "sticky",
         color: "#fff",
         mixBlendMode: "color-burn",
@@ -25,8 +23,6 @@ export default function Heading() {
         "@bp0": {
           padding: 20,
           fontSize: 40,
-          position: "sticky",
-          letterSpacing: -3,
         },
       }}
     >
