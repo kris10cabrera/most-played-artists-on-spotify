@@ -67,9 +67,6 @@ export default function Home() {
               boxShadow: "rgb(171 171 171) 1px 1px 20px 1px",
               padding: 7,
               borderRadius: 40,
-              "@bp0-max": {
-                padding: 2,
-              },
             }}
             speed={30}
             gradient={false}
