@@ -26,7 +26,7 @@ a {
     url("./fonts/FT88-Gothique.woff") format("woff");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -44,7 +44,7 @@ a {
     url("./fonts/FT88-Italic.woff") format("woff");
   font-weight: normal;
   font-style: italic;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -53,5 +53,5 @@ a {
     url("./fonts/FT88-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
