@@ -64,7 +64,7 @@ export default function Home() {
             style={{
               background: "rgb(205, 205, 205)",
               backdropFilter: "blur(1px)",
-              boxShadow: "1px 1px 20px 1px #000000",
+              boxShadow: "rgb(171 171 171) 1px 1px 20px 1px",
               padding: 7,
               borderRadius: 40,
               "@bp0-max": {
