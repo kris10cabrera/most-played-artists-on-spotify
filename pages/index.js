@@ -9,6 +9,7 @@ import Scrollbar from "../components/Doodles";
 import fetcher from "../lib/fetcher";
 import Heading from "../components/Heading";
 import Footer from "../components/Footer";
+import Marquee from "react-fast-marquee";
 
 export default function Home() {
   const [user, fetchUser] = useState(null);
@@ -45,16 +46,35 @@ export default function Home() {
           <Button fetchUser={fetchUser} />
           <Box
             css={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: 20,
-              alignItems: "center",
-              justifyContent: "space-evenly",
+              border: "1px solid #9e9696",
+              borderRadius: 30,
+              background: "#ff00ad75",
+              overflow: "hidden",
+              boxShadow: "-4px 9px 6px 0px #9c9494",
             }}
           >
             {artists.map((artist, index) => {
               return <Heart artist={artist} key={artist.image} index={index} />;
             })}
+            <Marquee
+              direction="right"
+              pauseOnHover
+              speed={7}
+              gradient={false}
+              style={{
+                paddingTop: 40,
+                paddingBottom: 40,
+                overflow: "unset",
+                background:
+                  "linear-gradient(360deg, black, transparent), linear-gradient(360deg, black, transparent)",
+              }}
+            >
+              {array.map((artist, index) => {
+                return (
+                  <Heart artist={artist} key={artist.image} index={index} />
+                );
+              })}
+            </Marquee>
           </Box>
           <Box
             css={{

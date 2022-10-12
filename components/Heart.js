@@ -40,7 +40,7 @@ export default function Heart(props) {
         "@hover": {
           "&:hover": {
             "&::after": {
-              opacity: 0,
+              opacity: artist.artist ? 0 : 1,
             },
           },
         },
