@@ -68,6 +68,7 @@ export default function Heart(props) {
         {artist.artist}
       </Box>
       <Image
+        loading="lazy"
         alt={artist.name}
         src={artist.image}
         css={{
