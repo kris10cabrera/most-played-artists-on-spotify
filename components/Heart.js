@@ -1,6 +1,6 @@
 import Box from "./base/Box";
 
-import Image from "./base/Image";
+import Image from "next/image";
 
 export default function Heart(props) {
   const { artist, index } = props;
@@ -68,10 +68,11 @@ export default function Heart(props) {
         {artist.artist}
       </Box>
       <Image
-        loading="lazy"
         alt={artist.name}
         src={artist.image}
-        css={{
+        width={300}
+        height={300}
+        style={{
           mixBlendMode: "color-burn",
           clipPath:
             index % 3 === 0
