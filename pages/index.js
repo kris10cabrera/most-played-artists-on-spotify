@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import useSWR from "swr";
-import Box from "../components/base/Box";
+import Box from "../components/Box";
 
 import Button from "../components/Button";
 import Heart from "../components/Heart";

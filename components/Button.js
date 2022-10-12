@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Box from "./base/Box";
+import Box from "./Box";
 
 export default function Button({ fetchUser }) {
   const [button, showButton] = useState(true);
@@ -54,7 +54,7 @@ export default function Button({ fetchUser }) {
   return (
     <Box
       as="button"
-      onClick={login}
+      // onClick={login}
       css={{
         cursor: "pointer",
         padding: 10,

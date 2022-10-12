@@ -1,5 +1,5 @@
 import Marquee from "react-fast-marquee";
-import Box from "./base/Box";
+import Box from "./Box";
 import SecondaryHeading from "./SecondaryHeading";
 
 export default function Footer({ genres }) {

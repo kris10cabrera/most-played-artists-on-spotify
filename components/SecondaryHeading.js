@@ -1,4 +1,4 @@
-import Box from "./base/Box";
+import Box from "./Box";
 
 export default function SecondaryHeading() {
   return (
