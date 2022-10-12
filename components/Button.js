@@ -73,11 +73,16 @@ export default function Button({ fetchUser }) {
         borderTopColor: "#c4c4c4",
         borderBottomColor: "#ccc",
         borderLeftColor: "#fff",
+        transition: "transform 200ms, background-color 200ms",
         "@bp0-max": {
           fontSize: 20,
           padding: 5,
           position: "sticky",
           top: 20,
+        },
+        "&:active": {
+          transform: "translateY(2px)",
+          backgroundColor: "#a7a7a7",
         },
       }}
     >
