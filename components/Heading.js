@@ -9,9 +9,7 @@ export default function Heading() {
         fontFamily: "FT88",
         fontWeight: "bold",
         zIndex: 5,
-        top: 15,
         fontSize: 27,
-        position: "sticky",
         color: "#fff",
         mixBlendMode: "color-burn",
         border: "1px solid red",
@@ -19,10 +17,13 @@ export default function Heading() {
         borderRadius: 11,
         backdropFilter: "blur(3px)",
         marginBottom: 40,
-        padding: 5,
+        padding: 22,
         "@bp0": {
+          position: "sticky",
           padding: 20,
-          fontSize: 40,
+          top: 15,
+          fontSize: 37,
+          textShadow: "0 0 11px #ff0000",
         },
       }}
     >

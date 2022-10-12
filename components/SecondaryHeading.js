@@ -10,6 +10,7 @@ export default function SecondaryHeading() {
         color: "#000",
         marginTop: 60,
         zIndex: 3,
+        textShadow: "0 0 7px white",
         position: "relative",
         "@bp0-max": {
           fontSize: 16,

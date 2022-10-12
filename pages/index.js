@@ -60,10 +60,13 @@ export default function Home() {
           </Box>
           <SecondaryHeading />
           <Marquee
+            pauseOnHover
             style={{
               background: "rgb(205, 205, 205)",
-              border: "1px outset #ccc",
+              backdropFilter: "blur(1px)",
+              boxShadow: "1px 1px 20px 1px #000000",
               padding: 7,
+              borderRadius: 40,
               "@bp0-max": {
                 padding: 2,
               },
