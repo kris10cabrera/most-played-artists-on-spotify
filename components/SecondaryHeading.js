@@ -8,10 +8,9 @@ export default function SecondaryHeading() {
         fontFamily: "FT88 Gothique",
         fontSize: 27,
         color: "#000",
-        marginTop: 60,
-        zIndex: 3,
         textShadow: "0 0 7px white",
-        position: "relative",
+        paddingTop: 10,
+        marginBottom: 15,
         "@bp0-max": {
           fontSize: 16,
         },
