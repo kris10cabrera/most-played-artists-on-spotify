@@ -16,11 +16,8 @@ export default function Footer({ genres }) {
           fontFamily: "FT88 Gothique",
           color: "#000",
           textShadow: "0 0 7px white",
-          fontSize: 27,
+          fontSize: 30,
           paddingTop: 10,
-          "@bp0-max": {
-            fontSize: 23,
-          },
         }}
       >
         your genres are described as:
@@ -62,7 +59,7 @@ export default function Footer({ genres }) {
         css={{
           fontFamily: "FT88",
           zIndex: 5,
-          fontSize: 18,
+          fontSize: 22,
           fontStyle: "italic",
           color: "#000",
           background: "rgb(255 255 255 / 85%)",

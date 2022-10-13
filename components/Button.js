@@ -58,7 +58,7 @@ export default function Button({ fetchUser }) {
       css={{
         cursor: "pointer",
         padding: 10,
-        zIndex: 1,
+        zIndex: 9,
         alignSelf: "flex-start",
         fontFamily: "FT88 Gothique",
         position: "relative",

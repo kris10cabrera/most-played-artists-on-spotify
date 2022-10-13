@@ -32,6 +32,7 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Scrollbar />
       <Box
         as="main"
         css={{
@@ -42,7 +43,6 @@ export default function Home() {
           minHeight: "100vh",
         }}
       >
-        <Scrollbar />
         <Box
           as="section"
           css={{
