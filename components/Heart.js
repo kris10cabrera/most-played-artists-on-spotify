@@ -1,11 +1,14 @@
 import Box from "./Box";
 
 import Image from "next/image";
-
-const SIZE = 240;
+import { useMedia } from "react-use";
+import { config } from "../stitches.config";
 
 export default function Heart(props) {
   const { artist } = props;
+  const isMobile = useMedia(config.media["bp2-max"]);
+
+  const size = isMobile ? 218 : 240;
 
   return (
     <Box
@@ -16,7 +19,7 @@ export default function Heart(props) {
       key={artist.artist}
       css={{
         position: "relative",
-        width: SIZE,
+        width: size,
         display: "flex",
         flexDirection: "column",
         textAlign: "center",
@@ -55,7 +58,7 @@ export default function Heart(props) {
         <Box
           css={{
             textTransform: "lowercase",
-            fontSize: 21,
+            fontsize: 21,
             lineHeight: 1.2,
             fontFamily: "FT88 Gothique",
             color: "#fff",
@@ -69,7 +72,7 @@ export default function Heart(props) {
             paddingRight: 4,
             borderRadius: 4,
             "@bp0-max": {
-              fontSize: 18,
+              fontsize: 18,
             },
           }}
         >
@@ -80,8 +83,8 @@ export default function Heart(props) {
         <Image
           alt={artist.name}
           src={artist.image}
-          width={SIZE}
-          height={SIZE}
+          width={size}
+          height={size}
           style={{
             clipPath:
               "path('M213.1,6.7c-32.4-14.4-73.7,0-88.1,30.6C110.6,4.9,67.5-9.5,36.9,6.7C2.8,22.9-13.4,62.4,13.5,110.9 C33.3,145.1,67.5,170.3,125,217c59.3-46.7,93.5-71.9,111.5-106.1C263.4,64.2,247.2,22.9,213.1,6.7z')",
@@ -90,8 +93,8 @@ export default function Heart(props) {
       ) : (
         <Box
           css={{
-            height: SIZE,
-            width: SIZE,
+            height: size,
+            width: size,
             background: "white",
             mixBlendMode: "color-burn",
             borderRadius: "71px",
