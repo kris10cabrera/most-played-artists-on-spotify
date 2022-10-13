@@ -27,6 +27,8 @@ export default function Heart(props) {
         img: {
           objectFit: "cover",
           objectPosition: "center",
+          maskImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1' preserveAspectRatio='none'%3E%3Cpath d='M.5 1C.5 1 0 .7 0 .3A .25.25 1 1 1 .5.3A.25 .25 1 1 1 1 .3C1 .7 .5 1 .5 1Z'/%3E%3C/svg%3E")`,
+          WebkitMaskImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1' preserveAspectRatio='none'%3E%3Cpath d='M.5 1C.5 1 0 .7 0 .3A .25.25 1 1 1 .5.3A.25 .25 1 1 1 1 .3C1 .7 .5 1 .5 1Z'/%3E%3C/svg%3E")`,
         },
         "&::after": {
           content: "",
@@ -85,10 +87,6 @@ export default function Heart(props) {
           src={artist.image}
           width={size}
           height={size}
-          style={{
-            clipPath:
-              "path('M213.1,6.7c-32.4-14.4-73.7,0-88.1,30.6C110.6,4.9,67.5-9.5,36.9,6.7C2.8,22.9-13.4,62.4,13.5,110.9 C33.3,145.1,67.5,170.3,125,217c59.3-46.7,93.5-71.9,111.5-106.1C263.4,64.2,247.2,22.9,213.1,6.7z')",
-          }}
         />
       ) : (
         <Box

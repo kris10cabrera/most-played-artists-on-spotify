@@ -11,13 +11,13 @@ export default function Heading() {
         zIndex: 5,
         fontSize: 27,
         color: "#fff",
-        mixBlendMode: "color-burn",
         border: "1px solid red",
         background: "#000",
         borderRadius: 11,
         backdropFilter: "blur(3px)",
         padding: 22,
-        textShadow: "rgb(0 12 255) 0px 0px 11px",
+        textShadow:
+          "rgb(255 0 220) 0px 0px 15px, rgb(255 0 213) 0px 0px 15px, rgb(255 0 0) 0px 0px 15px, rgb(255 0 0) 0px 0px 15px, rgb(255 0 0) 0px 0px 15px, rgb(255 0 0) 0px 0px 15px, rgb(255 0 0) 0px 0px 15px, rgb(255 0 0) 0px 0px 15px",
         "@bp0": {
           padding: 20,
           fontSize: 37,
