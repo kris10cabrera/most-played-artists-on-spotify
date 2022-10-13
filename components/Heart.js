@@ -2,9 +2,10 @@ import Box from "./Box";
 
 import Image from "next/image";
 
+const SIZE = 240;
+
 export default function Heart(props) {
-  const { artist, index } = props;
-  const divisible = index % 3 === 0;
+  const { artist } = props;
 
   return (
     <Box
@@ -15,10 +16,10 @@ export default function Heart(props) {
       key={artist.artist}
       css={{
         position: "relative",
-        width: 300,
+        width: SIZE,
         display: "flex",
         flexDirection: "column",
-        alignItems: divisible ? "center" : "flex-end",
+        textAlign: "center",
         filter: "drop-shadow(red 0px 0px 10px)",
         "&::after": {
           content: "",
@@ -75,32 +76,26 @@ export default function Heart(props) {
         <Image
           alt={artist.name}
           src={artist.image}
-          width={300}
-          height={300}
+          width={SIZE}
+          height={SIZE}
           style={{
             mixBlendMode: "color-burn",
+            objectFit: "cover",
             clipPath:
-              index % 3 === 0
-                ? "path('M213.1,6.7c-32.4-14.4-73.7,0-88.1,30.6C110.6,4.9,67.5-9.5,36.9,6.7C2.8,22.9-13.4,62.4,13.5,110.9 C33.3,145.1,67.5,170.3,125,217c59.3-46.7,93.5-71.9,111.5-106.1C263.4,64.2,247.2,22.9,213.1,6.7z')"
-                : "url(#svgClip)",
+              "path('M213.1,6.7c-32.4-14.4-73.7,0-88.1,30.6C110.6,4.9,67.5-9.5,36.9,6.7C2.8,22.9-13.4,62.4,13.5,110.9 C33.3,145.1,67.5,170.3,125,217c59.3-46.7,93.5-71.9,111.5-106.1C263.4,64.2,247.2,22.9,213.1,6.7z')",
           }}
         />
       ) : (
         <Box
           css={{
-            height: 300,
-            width: 300,
+            height: SIZE,
+            width: SIZE,
             background: "white",
             mixBlendMode: "color-burn",
             borderRadius: "71px",
           }}
         />
       )}
-      <svg width="0" height="0">
-        <clipPath id="svgClip" clipPathUnits="objectBoundingBox">
-          <path d="M0.75815095,0.0579477769 C1.597983708,0.187288937 0.902165272,0.77587654 0.799370955,0.785996249 C0.627963035,10.966765889 0.26163708,0.91434951 0.111342491,0.755791573 C-0.932137967,0.603287436 -0.035795248,0.382887577 0.0965066612,0.173955315 C0.200239457,0.10101396315 0.648923894,-0.0580965318 0.75815095,0.0579477 "></path>{" "}
-        </clipPath>
-      </svg>
     </Box>
   );
 }

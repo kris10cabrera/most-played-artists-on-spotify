@@ -69,14 +69,14 @@ export default function Home() {
             <Marquee
               direction="right"
               pauseOnHover
-              speed={7}
+              speed={13}
               gradient={false}
               style={{
                 paddingTop: 40,
                 paddingBottom: 40,
                 overflow: "unset",
                 background:
-                  "linear-gradient(360deg, black, transparent), linear-gradient(360deg, black, transparent)",
+                  "linear-gradient(360deg, #b8b8b8, transparent), linear-gradient(360deg, white, transparent)",
               }}
             >
               {artists
@@ -92,7 +92,7 @@ export default function Home() {
                   })}
             </Marquee>
           </Box>
-          <Footer genres={artists ? artists : array} />
+          <Footer genres={genres ? genres : array} />
           <Box
             css={{
               fontFamily: "FT88",

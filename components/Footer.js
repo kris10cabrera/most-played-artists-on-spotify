@@ -40,7 +40,7 @@ export default function Footer({ genres }) {
           marginTop: 10,
           marginBottom: 20,
         }}
-        speed={2}
+        speed={14}
         gradient={false}
       >
         {genres.map((genre, index) => (
@@ -49,14 +49,12 @@ export default function Footer({ genres }) {
             key={genre}
             css={{
               fontFamily: "FT88",
-              letterSpacing: 1,
-              marginRight: 3,
-              fontSize: 17,
-              "@bp0-max": { fontSize: 14 },
+              fontSize: 16,
             }}
           >
             {genre}
-            {genres.length - 1 !== index && ","}
+            {` `}
+            {genres.length - 1 !== index && " /"}
           </Box>
         ))}
       </Marquee>

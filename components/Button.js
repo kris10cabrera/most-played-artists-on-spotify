@@ -54,11 +54,12 @@ export default function Button({ fetchUser }) {
   return (
     <Box
       as="button"
-      // onClick={login}
+      onClick={login}
       css={{
         cursor: "pointer",
         padding: 10,
         zIndex: 1,
+        alignSelf: "flex-start",
         fontFamily: "FT88 Gothique",
         position: "relative",
         display: button ? "block" : "none",
@@ -67,7 +68,6 @@ export default function Button({ fetchUser }) {
         fontSize: 26,
         backgroundColor: "#cdcdcd",
         color: "blue",
-
         border: "2px outset",
         borderRightColor: "#c4c4c4",
         borderTopColor: "#c4c4c4",
