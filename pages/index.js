@@ -13,6 +13,7 @@ import Marquee from "react-fast-marquee";
 
 export default function Home() {
   const [user, fetchUser] = useState(null);
+  const [list, viewlist] = useState(false);
 
   const { data } = useSWR("/api/recentlyPlayed", fetcher);
   if (!data) {
@@ -57,40 +58,114 @@ export default function Home() {
         >
           <Heading />
           <Button fetchUser={fetchUser} />
-          <Box
-            css={{
-              border: "1px solid #9e9696",
-              borderRadius: 30,
-              background: "#ff00ad75",
-              overflow: "hidden",
-              boxShadow: "-4px 9px 6px 0px #9c9494",
-            }}
-          >
-            <Marquee
-              direction="right"
-              pauseOnHover
-              speed={13}
-              gradient={false}
-              style={{
-                paddingTop: 40,
-                paddingBottom: 40,
-                overflow: "unset",
-                background:
-                  "linear-gradient(360deg, #b8b8b8, transparent), linear-gradient(360deg, white, transparent)",
+          <Box>
+            <Box
+              css={{
+                border: "1px solid #9e9696",
+                borderRadius: 30,
+                background: "#ff00ad75",
+                overflow: "hidden",
+                boxShadow: "-4px 9px 6px 0px #9c9494",
               }}
             >
-              {artists
-                ? artists.map((artist, index) => {
-                    return (
-                      <Heart artist={artist} key={artist.image} index={index} />
-                    );
-                  })
-                : arr.map((artist, index) => {
-                    return (
-                      <Heart artist={artist} key={artist.image} index={index} />
-                    );
-                  })}
-            </Marquee>
+              {!list ? (
+                <Marquee
+                  direction="right"
+                  pauseOnHover
+                  speed={13}
+                  gradient={false}
+                  style={{
+                    paddingTop: 40,
+                    paddingBottom: 40,
+                    overflow: "unset",
+                    background:
+                      "linear-gradient(360deg, #b8b8b8, transparent), linear-gradient(360deg, white, transparent)",
+                  }}
+                >
+                  {artists
+                    ? artists.map((artist, index) => {
+                        return (
+                          <Heart
+                            artist={artist}
+                            key={artist.image}
+                            index={index}
+                          />
+                        );
+                      })
+                    : arr.map((artist, index) => {
+                        return (
+                          <Heart
+                            artist={artist}
+                            key={artist.image}
+                            index={index}
+                          />
+                        );
+                      })}
+                </Marquee>
+              ) : (
+                <Box
+                  css={{
+                    display: "flex",
+                    justifyContent: "center",
+                    flexWrap: "wrap",
+                    paddingTop: 20,
+                    paddingBottom: 20,
+                    overflow: "unset",
+                    background:
+                      "linear-gradient(360deg, #b8b8b8, transparent), linear-gradient(360deg, white, transparent)",
+                  }}
+                >
+                  {artists
+                    ? artists.map((artist, index) => {
+                        return (
+                          <Heart
+                            artist={artist}
+                            key={artist.image}
+                            index={index}
+                          />
+                        );
+                      })
+                    : arr.map((artist, index) => {
+                        return (
+                          <Heart
+                            artist={artist}
+                            key={artist.image}
+                            index={index}
+                          />
+                        );
+                      })}
+                </Box>
+              )}
+            </Box>
+            <Box
+              as="button"
+              onClick={() => viewlist(!list)}
+              css={{
+                marginTop: 12,
+                cursor: "pointer",
+                padding: 2,
+                zIndex: 9,
+                alignSelf: "flex-start",
+                fontFamily: "FT88",
+                position: "relative",
+                textShadow: "0px 0px 17px #0031ff",
+                fontSize: 16,
+                backgroundColor: "#cdcdcd",
+                color: "#000000",
+                border: "2px outset",
+                borderRightColor: "#c4c4c4",
+                borderTopColor: "#c4c4c4",
+                borderBottomColor: "#ccc",
+                borderLeftColor: "#fff",
+                transition: "transform 200ms, background-color 200ms",
+                "&:active": {
+                  transform: "translateY(2px)",
+                  backgroundColor: "#a7a7a7",
+                },
+              }}
+            >
+              {list ? "view within container" : "view as list"}
+            </Box>
           </Box>
           <Footer genres={genres ? genres : arr} />
           <Box
