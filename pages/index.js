@@ -39,7 +39,6 @@ export default function Home() {
           backgroundColor: "#efefef",
           padding: 20,
           color: "#000",
-          paddingBottom: 100,
           minHeight: "100vh",
         }}
       >
