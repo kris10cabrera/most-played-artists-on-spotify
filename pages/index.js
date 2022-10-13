@@ -92,19 +92,19 @@ export default function Home() {
                   })}
             </Marquee>
           </Box>
+          <Footer genres={artists ? artists : array} />
           <Box
             css={{
               fontFamily: "FT88",
-              marginTop: 40,
               textAlign: "right",
               position: "relative",
+              fontSize: 12,
               marginTop: 80,
             }}
           >
             Fonts courtesy of Velvetyne Type Foundry & Full Auto Foundry
           </Box>
         </Box>
-        <Footer genres={genres} />
       </Box>
     </div>
   );
