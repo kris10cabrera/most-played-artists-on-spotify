@@ -20,6 +20,7 @@ export default function Home() {
   }
 
   const { artists, genres } = user ? user : data;
+  const arr = Array(20).fill(0);
 
   return (
     <div>
@@ -85,14 +86,14 @@ export default function Home() {
                       <Heart artist={artist} key={artist.image} index={index} />
                     );
                   })
-                : array.map((artist, index) => {
+                : arr.map((artist, index) => {
                     return (
                       <Heart artist={artist} key={artist.image} index={index} />
                     );
                   })}
             </Marquee>
           </Box>
-          <Footer genres={genres ? genres : array} />
+          <Footer genres={genres ? genres : arr} />
           <Box
             css={{
               fontFamily: "FT88",
