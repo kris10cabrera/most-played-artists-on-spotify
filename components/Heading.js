@@ -19,9 +19,7 @@ export default function Heading() {
         padding: 22,
         textShadow: "rgb(0 12 255) 0px 0px 11px",
         "@bp0": {
-          position: "sticky",
           padding: 20,
-          top: 15,
           fontSize: 37,
         },
       }}
