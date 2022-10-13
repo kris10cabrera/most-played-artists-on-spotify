@@ -16,7 +16,7 @@ export default function Heading() {
         background: "#000",
         borderRadius: 11,
         backdropFilter: "blur(3px)",
-        marginBottom: 40,
+
         padding: 22,
         textShadow: "rgb(0 12 255) 0px 0px 11px",
         "@bp0": {

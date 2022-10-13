@@ -38,10 +38,23 @@ export default function Home() {
           padding: 20,
           color: "#000",
           paddingBottom: 100,
+          minHeight: "100vh",
         }}
       >
         <Scrollbar />
-        <Box as="section" css={{ maxWidth: 1400, margin: "auto" }}>
+        <Box
+          as="section"
+          css={{
+            maxWidth: 1400,
+            margin: "auto",
+            display: "flex",
+            flexDirection: "column",
+            gap: 20,
+            "@bp0": {
+              gap: 40,
+            },
+          }}
+        >
           <Heading />
           <Button fetchUser={fetchUser} />
           <Box
@@ -53,9 +66,6 @@ export default function Home() {
               boxShadow: "-4px 9px 6px 0px #9c9494",
             }}
           >
-            {artists.map((artist, index) => {
-              return <Heart artist={artist} key={artist.image} index={index} />;
-            })}
             <Marquee
               direction="right"
               pauseOnHover
@@ -69,11 +79,17 @@ export default function Home() {
                   "linear-gradient(360deg, black, transparent), linear-gradient(360deg, black, transparent)",
               }}
             >
-              {array.map((artist, index) => {
-                return (
-                  <Heart artist={artist} key={artist.image} index={index} />
-                );
-              })}
+              {artists
+                ? artists.map((artist, index) => {
+                    return (
+                      <Heart artist={artist} key={artist.image} index={index} />
+                    );
+                  })
+                : array.map((artist, index) => {
+                    return (
+                      <Heart artist={artist} key={artist.image} index={index} />
+                    );
+                  })}
             </Marquee>
           </Box>
           <Box
@@ -81,9 +97,8 @@ export default function Home() {
               fontFamily: "FT88",
               marginTop: 40,
               textAlign: "right",
-
               position: "relative",
-              fontSize: 14,
+              marginTop: 80,
             }}
           >
             Fonts courtesy of Velvetyne Type Foundry & Full Auto Foundry
