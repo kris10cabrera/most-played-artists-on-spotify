@@ -1,6 +1,8 @@
 import Box from "./Box";
 
 export default function Scrollbar() {
+  const arr = Array(20).fill(["o", "n", "m", "e", "d", "a"]).flat();
+
   return (
     <Box
       aria-hidden
@@ -21,15 +23,6 @@ export default function Scrollbar() {
         },
       }}
     >
-      onmedonmedonmedonmedonmedonmedonmed
-      onmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmed
-      onmedonmedonmedonmedonmedonmedonmed onmedonmedonmedonmedonmedonmedonmed
-      onmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmed
-      onmedonmedonmedonmedonmedonmedonmed onmedonmedonmedonmedonmedonmedonmed
-      onmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmed
-      onmedonmedonmedonmedonmedonmedonmed onmedonmedonmedonmedonmedonmedonmed
-      onmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmedonmed
-      onmedonmedonmedonmedonmedonmedonmed
       {arr.map((elem, index) => {
         const divisible = index % 2 === 0;
         return (
