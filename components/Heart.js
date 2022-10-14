@@ -65,7 +65,7 @@ export default function Heart(props) {
             lineHeight: 1.2,
             fontFamily: "FT88 Gothique",
             color: "#fff",
-            background: "#000",
+            // background: "#000",
             maxWidth: "100%",
             whiteSpace: "nowrap",
             textOverflow: "ellipsis",
@@ -94,8 +94,6 @@ export default function Heart(props) {
           css={{
             height: size,
             width: size,
-            background: "white",
-            // mixBlendMode: "color-burn",
             borderRadius: "71px",
           }}
         />
