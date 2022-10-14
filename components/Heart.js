@@ -95,7 +95,7 @@ export default function Heart(props) {
             height: size,
             width: size,
             background: "white",
-            mixBlendMode: "color-burn",
+            // mixBlendMode: "color-burn",
             borderRadius: "71px",
           }}
         />

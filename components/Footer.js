@@ -28,7 +28,7 @@ export default function Footer({ genres }) {
         style={{
           background: "#fff",
           borderRadius: 30,
-          backdropFilter: "blur(1px)",
+
           boxShadow:
             "rgb(171 171 171) 1px 1px 20px 1px, rgb(157 157 157) 0px 0px 14px 0px inset",
           paddingTop: 10,
@@ -67,7 +67,7 @@ export default function Footer({ genres }) {
           bottom: 20,
           border: "1px solid #000",
           borderRadius: 11,
-          backdropFilter: "blur(3px)",
+
           maxWidth: 700,
           "@bp0": {
             padding: 10,
