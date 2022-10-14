@@ -57,7 +57,48 @@ export default function Home() {
           }}
         >
           <Heading />
-          <Button fetchUser={fetchUser} />
+          <Box
+            css={{
+              display: "flex",
+              justifyContent: "space-between",
+              "@bp0-max": {
+                flexDirection: "column",
+                gap: 6,
+              },
+            }}
+          >
+            <Button fetchUser={fetchUser} />
+            <Box
+              as="button"
+              onClick={() => viewlist(!list)}
+              css={{
+                cursor: "pointer",
+                padding: 2,
+                zIndex: 9,
+                alignSelf: "flex-start",
+                fontFamily: "FT88",
+                position: "relative",
+                fontSize: 14,
+                backgroundColor: "#cdcdcd",
+                color: "#000000",
+                border: "2px outset",
+                borderRightColor: "#c4c4c4",
+                borderTopColor: "#c4c4c4",
+                borderBottomColor: "#ccc",
+                borderLeftColor: "#fff",
+                transition: "transform 200ms, background-color 200ms",
+                "&:active": {
+                  transform: "translateY(2px)",
+                  backgroundColor: "#a7a7a7",
+                },
+                "@bp0-max": {
+                  alignSelf: "flex-end",
+                },
+              }}
+            >
+              {list ? "view within container" : "view as list"}
+            </Box>
+          </Box>
           <Box>
             <Box
               css={{
@@ -70,7 +111,7 @@ export default function Home() {
             >
               {!list ? (
                 <Marquee
-                  direction="right"
+                  direction="left"
                   pauseOnHover
                   speed={13}
                   gradient={false}
@@ -106,13 +147,19 @@ export default function Home() {
                 <Box
                   css={{
                     display: "flex",
-                    justifyContent: "center",
+                    justifyContent: "space-evenly",
                     flexWrap: "wrap",
                     paddingTop: 20,
                     paddingBottom: 20,
                     overflow: "unset",
                     background:
                       "linear-gradient(360deg, #b8b8b8, transparent), linear-gradient(360deg, white, transparent)",
+                    overflow: "scroll",
+                    maxHeight: 400,
+
+                    "@bp0": {
+                      maxHeight: 500,
+                    },
                   }}
                 >
                   {artists
@@ -136,35 +183,6 @@ export default function Home() {
                       })}
                 </Box>
               )}
-            </Box>
-            <Box
-              as="button"
-              onClick={() => viewlist(!list)}
-              css={{
-                marginTop: 12,
-                cursor: "pointer",
-                padding: 2,
-                zIndex: 9,
-                alignSelf: "flex-start",
-                fontFamily: "FT88",
-                position: "relative",
-                textShadow: "0px 0px 17px #0031ff",
-                fontSize: 16,
-                backgroundColor: "#cdcdcd",
-                color: "#000000",
-                border: "2px outset",
-                borderRightColor: "#c4c4c4",
-                borderTopColor: "#c4c4c4",
-                borderBottomColor: "#ccc",
-                borderLeftColor: "#fff",
-                transition: "transform 200ms, background-color 200ms",
-                "&:active": {
-                  transform: "translateY(2px)",
-                  backgroundColor: "#a7a7a7",
-                },
-              }}
-            >
-              {list ? "view within container" : "view as list"}
             </Box>
           </Box>
           <Footer genres={genres ? genres : arr} />

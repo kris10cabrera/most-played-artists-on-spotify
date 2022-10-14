@@ -8,7 +8,7 @@ export default function Heart(props) {
   const { artist } = props;
   const isMobile = useMedia(config.media["bp2-max"]);
 
-  const size = isMobile ? 218 : 240;
+  const size = isMobile ? 130 : 240;
 
   return (
     <Box
@@ -20,6 +20,7 @@ export default function Heart(props) {
       css={{
         position: "relative",
         width: size,
+        padding: 20,
         display: "flex",
         flexDirection: "column",
         textAlign: "center",

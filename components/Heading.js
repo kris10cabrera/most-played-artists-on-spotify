@@ -6,6 +6,7 @@ export default function Heading() {
       as="h1"
       css={{
         display: "inline-block",
+        mixBlendMode: "color-burn",
         fontFamily: "FT88",
         fontWeight: "bold",
         zIndex: 5,
