@@ -11,7 +11,7 @@ export default function Heading() {
         fontWeight: "bold",
         zIndex: 5,
         fontSize: 27,
-        color: "#fff",
+        color: "#000",
         border: "1px solid red",
         background: "#000",
         borderRadius: 11,

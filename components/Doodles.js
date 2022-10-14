@@ -1,6 +1,6 @@
 import Box from "./Box";
 
-export default function Scrollbar() {
+export default function Doodles() {
   const arr = Array(20).fill(["o", "n", "m", "e", "d", "a"]).flat();
 
   return (
@@ -17,7 +17,7 @@ export default function Scrollbar() {
         bottom: 0,
         top: 0,
         fontSize: 80,
-        transform: "scale(1.2)",
+
         "@bp0": {
           fontSize: 160,
         },
