@@ -23,7 +23,7 @@ export default function Footer({ genres }) {
         your genres are described as:
       </Box>
       <Marquee
-        direction="right"
+        direction="left"
         pauseOnHover
         style={{
           background: "#fff",
