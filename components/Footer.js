@@ -28,7 +28,6 @@ export default function Footer({ genres }) {
         style={{
           background: "#fff",
           borderRadius: 30,
-
           boxShadow:
             "rgb(171 171 171) 1px 1px 20px 1px, rgb(157 157 157) 0px 0px 14px 0px inset",
           paddingTop: 10,
