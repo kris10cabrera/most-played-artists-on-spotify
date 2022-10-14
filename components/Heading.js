@@ -6,11 +6,10 @@ export default function Heading() {
       as="h1"
       css={{
         display: "inline-block",
-        mixBlendMode: "color-burn",
         fontFamily: "FT88",
         fontWeight: "bold",
         zIndex: 5,
-        fontSize: 27,
+        fontSize: 30,
         color: "#000",
         border: "1px solid red",
         background: "#000",
@@ -21,7 +20,7 @@ export default function Heading() {
           "rgb(255 0 220) 0px 0px 15px, rgb(255 0 213) 0px 0px 15px, rgb(255 0 0) 0px 0px 15px, rgb(255 0 0) 0px 0px 15px, rgb(255 0 0) 0px 0px 15px, rgb(255 0 0) 0px 0px 15px, rgb(255 0 0) 0px 0px 15px, rgb(255 0 0) 0px 0px 15px",
         "@bp0": {
           padding: 20,
-          fontSize: 37,
+          fontSize: 53,
         },
       }}
     >
