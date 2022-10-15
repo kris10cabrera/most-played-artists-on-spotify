@@ -55,7 +55,7 @@ class MyDocument extends Document {
           />
           <meta
             property="og:image"
-            content="https://www.do-you-have-a-crush-on.me/open-graph.jpg"
+            content="https://www.do-you-have-a-crush-on.me/open-graph.png"
           />
           <meta property="twitter:card" content="summary_large_image" />
           <meta
@@ -69,7 +69,7 @@ class MyDocument extends Document {
           />
           <meta
             property="twitter:image"
-            content="https://www.do-you-have-a-crush-on.me/open-graph.jpg"
+            content="https://www.do-you-have-a-crush-on.me/open-graph.png"
           />
         </Head>
         <body>
