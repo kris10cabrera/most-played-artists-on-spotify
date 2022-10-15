@@ -98,10 +98,13 @@ export default function Home() {
               <Box
                 css={{
                   border: "1px solid #9e9696",
-                  borderRadius: 30,
                   background: "#ff00ad75",
                   overflow: "hidden",
-                  boxShadow: "-4px 9px 6px 0px #9c9494",
+
+                  "@bp0": {
+                    boxShadow: "-4px 9px 6px 0px #9c9494",
+                    borderRadius: 30,
+                  },
                 }}
               >
                 {!list ? (
@@ -109,7 +112,7 @@ export default function Home() {
                     css={{
                       display: "flex",
                       paddingY: 20,
-                      overflow: "scroll",
+                      overflowX: "scroll",
                       background:
                         "linear-gradient(360deg, #b8b8b8, transparent), linear-gradient(360deg, white, transparent)",
                       "@bp0": {
@@ -145,10 +148,15 @@ export default function Home() {
                       overflow: "unset",
                       background:
                         "linear-gradient(360deg, #b8b8b8, transparent), linear-gradient(360deg, white, transparent)",
-                      overflow: "scroll",
+                      overflowX: "scroll",
+                      border: "2px outset",
+                      borderRightColor: "#c4c4c4",
+                      borderTopColor: "#c4c4c4",
+                      borderBottomColor: "#ccc",
+                      borderLeftColor: "#fff",
                       maxHeight: 400,
-
                       "@bp0": {
+                        borderRadius: 30,
                         maxHeight: 500,
                       },
                     }}

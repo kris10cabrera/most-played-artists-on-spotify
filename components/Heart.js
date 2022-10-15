@@ -44,10 +44,10 @@ export default function Heart(props) {
           right: 0,
           top: 0,
           bottom: 0,
-          borderRadius: "71px",
           transition: "opacity 300ms",
           opacity: 1,
           zIndex: -2,
+          borderRadius: 71,
           boxShadow:
             "inset 0px 33px 25px 0 #000, inset 0 66px 15px 0px #ccc, inset 0 99px 5px 0px #fff",
           filter: "drop-shadow(red 0px 0px 10px)",
@@ -101,7 +101,7 @@ export default function Heart(props) {
               width: 190,
               height: 190,
             },
-            borderRadius: "71px",
+            borderRadius: 70,
           }}
         />
       )}
