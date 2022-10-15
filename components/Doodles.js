@@ -1,7 +1,7 @@
 import Box from "./Box";
 
 export default function Doodles() {
-  const arr = Array(20).fill(["o", "n", "m", "e", "d", "a"]).flat();
+  const arr = Array(20).fill(["o", "n", "e", "d", "a", "f", "z", "p"]).flat();
 
   return (
     <Box
@@ -17,9 +17,8 @@ export default function Doodles() {
         bottom: 0,
         top: 0,
         fontSize: 80,
-
         "@bp0": {
-          fontSize: 160,
+          fontSize: 140,
         },
       }}
     >
