@@ -1,7 +1,7 @@
 import Marquee from "react-fast-marquee";
 import Box from "./Box";
 
-export default function Footer({ genres }) {
+export default function Footer({ genres, isLoading, arr }) {
   return (
     <Box
       as="footer"
@@ -22,38 +22,64 @@ export default function Footer({ genres }) {
       >
         your genres are described as:
       </Box>
-      <Marquee
-        direction="left"
-        pauseOnHover
-        style={{
-          background: "#fff",
-          borderRadius: 30,
-          boxShadow:
-            "rgb(171 171 171) 1px 1px 20px 1px, rgb(157 157 157) 0px 0px 14px 0px inset",
-          paddingTop: 10,
-          paddingBottom: 5,
-          borderRadius: 50,
-          marginTop: 10,
-          marginBottom: 20,
-        }}
-        speed={14}
-        gradient={false}
-      >
-        {genres.map((genre, index) => (
-          <Box
-            as="span"
-            key={genre}
-            css={{
-              fontFamily: "FT88",
-              fontSize: 16,
-            }}
-          >
-            {genre}
-            {` `}
-            {genres.length - 1 !== index && " /"}
-          </Box>
-        ))}
-      </Marquee>
+      {isLoading ? (
+        <Box
+          css={{
+            height: 31,
+            background: "#fff",
+            borderRadius: 30,
+            boxShadow:
+              "rgb(171 171 171) 1px 1px 20px 1px, rgb(157 157 157) 0px 0px 14px 0px inset",
+            paddingTop: 10,
+            paddingBottom: 5,
+            borderRadius: 50,
+            marginTop: 10,
+            marginBottom: 20,
+          }}
+        >
+          {arr.map((index) => (
+            <Box
+              key={index}
+              css={{
+                width: 16,
+                height: 16,
+              }}
+            />
+          ))}
+        </Box>
+      ) : (
+        <Marquee
+          direction="left"
+          style={{
+            background: "#fff",
+            borderRadius: 30,
+            boxShadow:
+              "rgb(171 171 171) 1px 1px 20px 1px, rgb(157 157 157) 0px 0px 14px 0px inset",
+            paddingTop: 10,
+            paddingBottom: 5,
+            borderRadius: 50,
+            marginTop: 10,
+            marginBottom: 20,
+          }}
+          speed={14}
+          gradient={false}
+        >
+          {genres.map((genre, index) => (
+            <Box
+              as="span"
+              key={genre}
+              css={{
+                fontFamily: "FT88",
+                fontSize: 16,
+                marginLeft: 6,
+              }}
+            >
+              {genre}
+              {genres.length - 1 !== index && " /"}
+            </Box>
+          ))}
+        </Marquee>
+      )}
       <Box
         css={{
           fontFamily: "FT88",
