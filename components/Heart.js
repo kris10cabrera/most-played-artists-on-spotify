@@ -20,12 +20,15 @@ export default function Heart(props) {
       css={{
         minWidth: "fit-content",
         position: "relative",
-        width: size,
+        width: 240,
         padding: 20,
         display: "flex",
         flexDirection: "column",
         textAlign: "center",
         filter: "drop-shadow(red 0px 0px 10px)",
+        "@bp2-max": {
+          width: 190,
+        },
         img: {
           objectFit: "cover",
           objectPosition: "center",
@@ -66,7 +69,6 @@ export default function Heart(props) {
             lineHeight: 1.2,
             fontFamily: "FT88 Gothique",
             color: "#fff",
-            // background: "#000",
             maxWidth: "100%",
             whiteSpace: "nowrap",
             textOverflow: "ellipsis",
@@ -93,8 +95,12 @@ export default function Heart(props) {
       ) : (
         <Box
           css={{
-            height: size,
-            width: size,
+            width: 240,
+            height: 240,
+            "@bp2-max": {
+              width: 190,
+              height: 190,
+            },
             borderRadius: "71px",
           }}
         />
