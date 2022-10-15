@@ -63,10 +63,10 @@ a {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 4px;
-  background-color: rgb(241 153 204);
+  background-color: rgb(99 234 85);
   box-shadow: 0 0 8px 5px rgb(99 234 85);
 }
 
 body {
-  scrollbar-color: rgb(241 153 204) rgb(99 234 85);
+  scrollbar-color: rgb(99 234 85) rgb(99 234 85);
 }
