@@ -80,47 +80,70 @@ export default function Footer({ genres, isLoading, arr }) {
           ))}
         </Marquee>
       )}
-      <Box
-        css={{
-          fontFamily: "FT88",
-          zIndex: 5,
-          fontSize: 22,
-          fontStyle: "italic",
-          color: "#000",
-          background: "rgb(255 255 255 / 85%)",
-          padding: 5,
-          bottom: 20,
-          border: "1px solid #000",
-          borderRadius: 11,
 
-          maxWidth: 700,
-          "@bp0": {
-            padding: 10,
-            fontSize: 25,
-          },
-        }}
-      >
-        encuentra fuerza en el sonido{" "}
-        <Box as="span" css={{ fontSize: 15, "@bp0-max": { fontSize: 13 } }}>
-          *:･ﾟ✧*:･ﾟ
-        </Box>{" "}
-        made by{" "}
+      <Box css={{ display: "flex", flexDirection: "column", gap: 8 }}>
         <Box
-          as="a"
-          href="https://www.kristencabrera.com/"
-          target="_blank"
-          rel="noreferrer"
           css={{
-            textDecoration: "underline",
-            "@hover": {
-              "&:hover": {
-                background: "#000",
-                color: "#fff",
-              },
+            fontFamily: "FT88",
+            zIndex: 5,
+            fontSize: 15,
+            fontStyle: "italic",
+            color: "#000",
+            background: "rgb(255 255 255 / 85%)",
+            padding: 6,
+            border: "1px solid #000",
+            borderRadius: 11,
+            width: "fit-content",
+          }}
+        >
+          encuentra fuerza en el sonido
+        </Box>
+        <Box
+          css={{
+            fontFamily: "FT88",
+            zIndex: 5,
+            fontStyle: "italic",
+            color: "#000",
+            background: "rgb(255 255 255 / 85%)",
+            paddingTop: 3,
+            paddingBottom: 5,
+            paddingRight: 5,
+            border: "1px solid #000",
+            borderRadius: 11,
+            width: "fit-content",
+            fontSize: 15,
+
+            "@bp0": {
+              fontSize: 20,
+
+              padding: 10,
             },
           }}
         >
-          kris10cabrera
+          <Box as="span" css={{ fontSize: 15, "@bp0-max": { fontSize: 13 } }}>
+            *:✧*･ﾟ
+          </Box>{" "}
+          made by{" "}
+          <Box
+            as="a"
+            href="https://www.kristencabrera.com/"
+            target="_blank"
+            rel="noreferrer"
+            css={{
+              background: "#000",
+              color: "#fff",
+              padding: 5,
+              textDecoration: "underline",
+              "@hover": {
+                "&:hover": {
+                  color: "#000",
+                  background: "unset",
+                },
+              },
+            }}
+          >
+            kris10cabrera
+          </Box>
         </Box>
       </Box>
     </Box>
