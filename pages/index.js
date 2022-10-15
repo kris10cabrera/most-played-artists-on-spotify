@@ -1,26 +1,25 @@
 import Head from "next/head";
 import { useState } from "react";
-import useSWR from "swr";
+
 import Box from "../components/Box";
 
 import Button from "../components/Button";
 import Heart from "../components/Heart";
 import Doodles from "../components/Doodles";
-import fetcher from "../lib/fetcher";
+
 import Heading from "../components/Heading";
 import Footer from "../components/Footer";
 import Marquee from "react-fast-marquee";
+import useUser from "../hooks/use-user";
 
 export default function Home() {
   const [user, fetchUser] = useState(null);
   const [list, viewlist] = useState(false);
+  const { data, isLoading } = useUser();
 
-  const { data } = useSWR("/api/recentlyPlayed", fetcher);
-  if (!data) {
-    return null;
-  }
+  const artists = user ? user.artists : data?.artists;
+  const genres = user ? user.genres : data?.genres;
 
-  const { artists, genres } = user ? user : data;
   const arr = Array(20).fill(0);
 
   return (
@@ -128,8 +127,8 @@ export default function Home() {
                       },
                     }}
                   >
-                    {artists
-                      ? artists.map((artist, index) => {
+                    {isLoading
+                      ? arr.map((artist, index) => {
                           return (
                             <Heart
                               artist={artist}
@@ -138,7 +137,7 @@ export default function Home() {
                             />
                           );
                         })
-                      : arr.map((artist, index) => {
+                      : artists.map((artist, index) => {
                           return (
                             <Heart
                               artist={artist}
@@ -167,17 +166,13 @@ export default function Home() {
                       },
                     }}
                   >
-                    {artists
-                      ? artists.map((artist, index) => {
+                    {isLoading
+                      ? arr.map((index) => {
                           return (
-                            <Heart
-                              artist={artist}
-                              key={artist.image}
-                              index={index}
-                            />
+                            <Heart artist={index} key={index} index={index} />
                           );
                         })
-                      : arr.map((artist, index) => {
+                      : artists.map((artist, index) => {
                           return (
                             <Heart
                               artist={artist}
@@ -190,7 +185,7 @@ export default function Home() {
                 )}
               </Box>
             </Box>
-            <Footer genres={genres ? genres : arr} />
+            <Footer genres={genres} isLoading={isLoading} arr={arr} />
             <Box
               css={{
                 fontFamily: "FT88",
