@@ -5,7 +5,7 @@ import { useMedia } from "react-use";
 import { config } from "../stitches.config";
 
 export default function Heart(props) {
-  const { artist } = props;
+  const { artist, index } = props;
   const isMobile = useMedia(config.media["bp2-max"]);
 
   const size = isMobile ? 190 : 240;
@@ -16,7 +16,7 @@ export default function Heart(props) {
       target="_blank"
       rel="noreferrer"
       href={artist.url}
-      key={artist.artist}
+      key={index}
       css={{
         minWidth: "fit-content",
         position: "relative",

@@ -119,13 +119,9 @@ export default function Home() {
                     }}
                   >
                     {isLoading
-                      ? arr.map((artist, index) => {
+                      ? arr.map((_, index) => {
                           return (
-                            <Heart
-                              artist={artist}
-                              key={artist.image}
-                              index={index}
-                            />
+                            <Heart artist={index} key={index} index={index} />
                           );
                         })
                       : artists.map((artist, index) => {
@@ -158,7 +154,7 @@ export default function Home() {
                     }}
                   >
                     {isLoading
-                      ? arr.map((index) => {
+                      ? arr.map((_, index) => {
                           return (
                             <Heart artist={index} key={index} index={index} />
                           );
