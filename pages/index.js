@@ -2,24 +2,19 @@ import Head from "next/head";
 import { useState } from "react";
 
 import Box from "../components/Box";
-
 import Button from "../components/Button";
 import Heart from "../components/Heart";
 import Doodles from "../components/Doodles";
-
 import Heading from "../components/Heading";
 import Footer from "../components/Footer";
-import Marquee from "react-fast-marquee";
 import useUser from "../hooks/use-user";
 
 export default function Home() {
   const [user, fetchUser] = useState(null);
   const [list, viewlist] = useState(false);
   const { data, isLoading } = useUser();
-
   const artists = user ? user.artists : data?.artists;
   const genres = user ? user.genres : data?.genres;
-
   const arr = Array(20).fill(0);
 
   return (
@@ -96,7 +91,7 @@ export default function Home() {
                   },
                 }}
               >
-                {list ? "view within container" : "view as list"}
+                {list ? "horizontal list view" : "vertical list view"}
               </Box>
             </Box>
             <Box>
@@ -110,15 +105,11 @@ export default function Home() {
                 }}
               >
                 {!list ? (
-                  <Marquee
-                    direction="left"
-                    pauseOnHover
-                    speed={13}
-                    gradient={false}
-                    style={{
-                      paddingTop: 20,
-                      paddingBottom: 20,
-                      overflow: "unset",
+                  <Box
+                    css={{
+                      display: "flex",
+                      paddingY: 20,
+                      overflow: "scroll",
                       background:
                         "linear-gradient(360deg, #b8b8b8, transparent), linear-gradient(360deg, white, transparent)",
                       "@bp0": {
@@ -146,7 +137,7 @@ export default function Home() {
                             />
                           );
                         })}
-                  </Marquee>
+                  </Box>
                 ) : (
                   <Box
                     css={{

@@ -18,6 +18,7 @@ export default function Heart(props) {
       href={artist.url}
       key={artist.artist}
       css={{
+        minWidth: "fit-content",
         position: "relative",
         width: size,
         padding: 20,
