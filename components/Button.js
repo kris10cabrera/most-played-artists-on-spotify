@@ -77,8 +77,6 @@ export default function Button({ fetchUser }) {
         "@bp0-max": {
           fontSize: 20,
           padding: 5,
-          position: "sticky",
-          top: 20,
         },
         "&:active": {
           transform: "translateY(2px)",
