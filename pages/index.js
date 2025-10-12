@@ -121,7 +121,7 @@ export default function Home() {
                       },
                     }}
                   >
-                    {isLoading
+                    {isLoading || !artists
                       ? arr.map((_, index) => {
                           return (
                             <Heart artist={index} key={index} index={index} />

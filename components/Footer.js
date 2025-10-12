@@ -22,7 +22,7 @@ export default function Footer({ genres, isLoading, arr }) {
       >
         your genres are described as:
       </Box>
-      {isLoading ? (
+      {isLoading || !genres ? (
         <Box
           css={{
             height: 31,
