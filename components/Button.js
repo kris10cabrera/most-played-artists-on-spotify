@@ -1,53 +1,94 @@
 import { useEffect, useState } from "react";
 import Box from "./Box";
+import { generateCodeVerifier, generateCodeChallenge } from "../lib/spotify";
 
 export default function Button({ fetchUser }) {
   const [button, showButton] = useState(true);
   const scope = `user-top-read`;
-  const AUTHORIZATION_URL = `https://accounts.spotify.com/authorize?client_id=${process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID}&response_type=token&redirect_uri=${process.env.NEXT_PUBLIC_REDIRECT_URI}&scope=${scope}&show_dialog=true`;
 
   const login = () => {
+    const codeVerifier = generateCodeVerifier();
+    const codeChallenge = generateCodeChallenge(codeVerifier);
+    
+    const authUrl = new URL('https://accounts.spotify.com/authorize');
+    const params = {
+      response_type: 'code',
+      client_id: process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID,
+      redirect_uri: process.env.NEXT_PUBLIC_REDIRECT_URI,
+      scope,
+      code_challenge_method: 'S256',
+      code_challenge: codeChallenge,
+    };
+    
+    authUrl.search = new URLSearchParams(params).toString();
+    
+    // Store code verifier for later use
+    localStorage.setItem('spotify_code_verifier', codeVerifier);
+    
     let popup = window.open(
-      AUTHORIZATION_URL,
+      authUrl.toString(),
       "Login with Spotify",
       "width=800,height=600"
     );
-    window.spotifyCallback = (payload) => {
+    
+    window.spotifyCallback = async (payload) => {
       popup.close();
 
-      fetch(
-        `https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=50`,
-        {
+      try {
+        const codeVerifier = localStorage.getItem('spotify_code_verifier');
+        const tokenResponse = await fetch('https://accounts.spotify.com/api/token', {
+          method: 'POST',
           headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${payload}`,
+            'Content-Type': 'application/x-www-form-urlencoded',
           },
-        }
-      )
-        .then((response) => {
-          return response.json();
-        })
-        .then((data) => {
-          const { items } = data;
-          showButton(false);
-          const genres = Array.from(
-            new Set(items.map((item) => item.genres).flat())
-          );
-          const artists = items.map((item) => ({
-            artist: item.name,
-            image: item.images[1].url,
-            url: item.external_urls["spotify"],
-          }));
-
-          fetchUser({ artists, genres });
+          body: new URLSearchParams({
+            client_id: process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID,
+            grant_type: 'authorization_code',
+            code: payload,
+            redirect_uri: process.env.NEXT_PUBLIC_REDIRECT_URI,
+            code_verifier: codeVerifier,
+          }),
         });
+
+        const { access_token } = await tokenResponse.json();
+
+        const response = await fetch(
+          `https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=50`,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${access_token}`,
+            },
+          }
+        );
+
+        const data = await response.json();
+        const { items } = data;
+        showButton(false);
+        const genres = Array.from(
+          new Set(items.map((item) => item.genres).flat())
+        );
+        const artists = items.map((item) => ({
+          artist: item.name,
+          image: item.images[1].url,
+          url: item.external_urls["spotify"],
+        }));
+
+        fetchUser({ artists, genres });
+        
+        // Clean up
+        localStorage.removeItem('spotify_code_verifier');
+      } catch (error) {
+        console.error('Authentication error', error);
+      }
     };
   };
 
   useEffect(() => {
-    const token = window.location.hash.substr(1).split("&")[0].split("=")[1];
-    if (token) {
-      window.opener.spotifyCallback(token);
+    const urlParams = new URLSearchParams(window.location.search);
+    const code = urlParams.get('code');
+    if (code) {
+      window.opener.spotifyCallback(code);
     }
   }, []);
 
