@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "get-refresh-token": "node scripts/get-refresh-token.mjs"
   },
   "dependencies": {
     "@stitches/react": "^1.2.8",

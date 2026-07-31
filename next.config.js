@@ -8,7 +8,6 @@ module.exports = {
 			{
 				protocol: "https",
 				hostname: "i.scdn.co",
-				port: "",
 				pathname: "/image/**",
 			},
 		],
